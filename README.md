@@ -6,6 +6,22 @@ Although there are many ways to handle this behaviour in Golang.
 This library is useful for people who got used to Java/Scala Future implementation.
 
 
+Modifier and Type      	Method and Description
+
+bool                 	Cancel(boolean mayInterruptIfRunning)
+                        	Attempts to cancel execution of this task.
+[]interface{}, error    Get(boolean mayInterruptIfRunning)
+    				Waits if necessary for the computation to complete, and then retrieves its result.
+
+[]interface{}, error    GetWithTimeout(timeout time.Duration)
+  				Waits if necessary for at most the given time for the computation to complete, and then retrieves its result, if available.
+
+bool 			IsCancelled()
+				Returns true if this task was cancelled before it completed normally.
+
+bool 			IsDone()
+				Returns true if this task is completed.
+*/
 #### Import:
 ```golang
 import gofuture "github.com/gssaran/future-Golang-Library"
@@ -20,8 +36,7 @@ f := future.StartGo(func () (string, int) {
 	time.Sleep(1 * time.Second)
 	return name, id
 })
-// do something else here
-// get result when needed
+// do Something
 result := f.Get()
 ```
 
