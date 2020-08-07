@@ -6,6 +6,8 @@ Although there are many ways to handle this behaviour in Golang.
 This library is useful for people who got used to Java/Scala Future implementation.
 
 
+### Method Description:
+```golang
 Modifier and Type      	Method and Description
 
 bool                 	Cancel(boolean mayInterruptIfRunning)
@@ -21,7 +23,7 @@ bool 			IsCancelled()
 
 bool 			IsDone()
 				Returns true if this task is completed.
-*/
+```
 #### Import:
 ```golang
 import gofuture "github.com/gssaran/future-Golang-Library"
